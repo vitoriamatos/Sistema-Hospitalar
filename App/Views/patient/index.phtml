@@ -1,0 +1,34 @@
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<div class="container text-center col-md-10 car-area" >
+      <div class="text-center title title-div justify-content-center"  style="color:  #000; margin-top:5%">
+        <h3>Escolha o melhor plano pra você</h3>
+        <hr class="rounded">
+      </div>
+    
+      <div class="card-deck">
+            <?php foreach ($this->view->plains as $index => $plan) : ?>
+                <div class="card card-plan col-md-4">
+                <div class="">
+                    <div class="bg-white p-5 rounded-lg shadow head">
+                   
+                      <h4 class="h5 text-uppercase font-weight-bold mb-3"> <?= $plan['name']?> </h4>
+                      <h3 class="h3 font-weight-bold" style="color: #52cbff;">R$10,00</h3>
+                      <hr class="rounded-planos">
+                      <div class="custom-separator my-4 mx-auto bg-success"></div>
+                     
+                      <ul class="list-unstyled my-2 text-small text-left font-weight-normal">
+                        <li class="mb-3">
+                          <i class="fa fa-check mr-2 text-primary"></i><?= $this->view->descriptions['description']?><?= $plan['id']?></li>
+                      </ul>
+                      <input type="hidden" name="plain" id="<?=$plan['id']?>" value= "<?=$plan['name']?>">
+                      <button type="submit" id="<?=$plan['id']?>" class="btn btn-ecommerce btn-block p-2 shadow rounded-pill bt-componente" style="color: #fff">Adiquirir</button>
+                     
+                    </div>
+                </div>
+            </div>
+            <?php endforeach ?>
+      </div><!-- fim row text-center align-items-end-->
+    
+    </div><!-- fim div pricipal -->
+    

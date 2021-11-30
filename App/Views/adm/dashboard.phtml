@@ -1,0 +1,157 @@
+
+<div class="page-wrapper chiller-theme toggled">
+  <a id="show-sidebar" class="btn btn-sm btn-dark" href="#">
+    <i class="fas fa-bars"></i>
+  </a>
+  <nav id="sidebar" class="sidebar-wrapper">
+    <div class="sidebar-content">
+      <div class="sidebar-brand">
+        <a href="#">Modúlo Adm</a>
+        <div id="close-sidebar">
+          <i class="fas fa-times"></i>
+        </div>
+      </div>
+      <div class="sidebar-header">
+        <div class="user-pic">
+          <img class="img-responsive img-rounded" src="/img/admin.png" width="50" height="50" alt="User picture">
+        </div>
+        <div class="user-info">
+          <span class="user-name"><?=$this->view->info_user['name']?> </span>
+          <span class="user-role">Administrator</span>
+          
+        </div>
+      </div>
+     <!-- sidebar-search  -->
+      <div class="sidebar-menu">
+        <ul>
+          <li class="header-menu">
+            <span>General</span>
+          </li>
+          <li class="">
+            <a href="/dashboard-admin">
+              <i class="fa fa-tachometer-alt"></i>
+              <span>Dashboard</span>
+            </a>
+          </li>
+          <li class="sidebar-dropdown">
+            <a href="#">
+              <i class="fa fa-shopping-cart"></i>
+              <span>E-commerce</span>
+            </a>
+            <div class="sidebar-submenu">
+              <ul>
+                <li>
+                  <a href="/product">Produtos
+
+                  </a>
+                </li>
+                <li>
+                  <a id="leads-solicitations" href="/leads-solicitation" >Solicitações</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          
+          <li class="header-menu">
+            <span>Úsuarios</span>
+          </li>
+          <li class="sidebar-dropdown">
+            <a href="#">
+              <i class="fa fa-user"></i>
+              <span>Pacientes</span>
+            </a>
+            <div class="sidebar-submenu">
+              <ul>
+                <li>
+                  <a href="#">Pesqisar
+                  </a>
+                </li>
+                <li>
+                  <a href="/list-patients">Lista</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="sidebar-dropdown">
+            <a href="#">
+              <i class="fa fa-user"></i>
+              <span>Médicos</span>
+            </a>
+            <div class="sidebar-submenu">
+              <ul>
+                <li>
+                  <a id="patient-register" href="/doctor-register">Cadastrar
+                  </a>
+                </li>
+                <li>
+                  <a href="/list-doctors">Lista</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+            
+          <li class="header-menu">
+            <span>Pronto Socorro</span>
+          </li>
+          <li class="">
+            <a href="/urgency-solicitation">
+              <i class="fa fa-user"></i>
+              <span>Solicitações</span>
+            </a>
+         
+          </li>    
+          <li class="">
+            <a href="/list-urgency">
+              <i class="fa fa-user"></i>
+              <span>Listagem</span>
+            </a>
+          
+          </li>        
+        </ul>
+      </div>
+      <!-- sidebar-menu  -->
+    </div>
+    <!-- sidebar-content  -->
+    <div class="sidebar-footer">
+      <a href="/logout">
+        <i class="fa fa-power-off"></i>
+      </a>
+    </div>
+  </nav>
+  <main class="page-content">
+  
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" async>
+$(".sidebar-dropdown > a").click(function() {
+  $(".sidebar-submenu").slideUp(200);
+  if (
+    $(this)
+      .parent()
+      .hasClass("active")
+  ) {
+    $(".sidebar-dropdown").removeClass("active");
+    $(this)
+      .parent()
+      .removeClass("active");
+  } else {
+    $(".sidebar-dropdown").removeClass("active");
+    $(this)
+      .next(".sidebar-submenu")
+      .slideDown(200);
+    $(this)
+      .parent()
+      .addClass("active");
+  }
+});
+
+$("#close-sidebar").click(function() {
+  $(".page-wrapper").removeClass("toggled");
+});
+$("#show-sidebar").click(function() {
+  $(".page-wrapper").addClass("toggled");
+});
+
+</script>

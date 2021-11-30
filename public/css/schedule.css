@@ -1,0 +1,543 @@
+ /**AGENDAMENTO DE EXAMES**/
+
+ @import url(https://fonts.googleapis.com/css?family=Lato:400,300,700);
+
+ @font-face {
+     font-family: dsaribold;
+     src: url(../assets/fonts/natal/dsari-bold-DSari.woff2);
+ }
+
+ @font-face {
+     font-family: dsarimedium;
+     src: url(../assets/fonts/natal/dsari-medium-DSari.woff2);
+ }
+
+ @page {
+     size: A4;
+     margin: 0;
+     margin-bottom: 0.5cm;
+     margin-top: 0.5cm;
+ }
+
+ @media print {
+
+     html,
+     body {
+         width: 190mm;
+         height: 297mm;
+     }
+
+     h4 {
+         font-size: 20px;
+     }
+
+     .col-md-4 {
+         width: 33%;
+         float: left;
+     }
+
+     .col-md-12 {
+         font-size: 13px;
+     }
+
+     .escondido {
+         display: none;
+     }
+
+     .bgm-green {
+         background-color: #00995d !important;
+     }
+
+     .emLinhaPrint {
+         display: table-cell !important;
+     }
+
+     .divEnvio {
+         display: none !important;
+     }
+
+     .camposEnvio {
+         display: none !important;
+     }
+
+     .divAceitar {
+         display: none !important;
+     }
+
+     .divAlterar {
+         display: none !important;
+     }
+
+     .c-white {
+         font-size: 18px;
+     }
+ }
+
+ textarea {
+     margin: 20px;
+     width: 96%;
+     padding: 5px;
+     border: 1px solid #0a5f55;
+     margin-left: 0px;
+ }
+
+ button {
+     background: #00995d;
+     color: #fff;
+     padding: 10px 20px;
+     border-radius: 10px;
+     width: 200px;
+     font-weight: 600;
+ }
+
+ .col-md-6 {
+     width: 50%;
+     float: left;
+     margin-top: -3px;
+ }
+
+ button:hover {
+     transition: background 1s;
+     background: #fff;
+     color: #00995d;
+ }
+
+ p {
+     margin-bottom: 0px;
+ }
+
+ .termosadesao {
+     margin: 0px 20px 50px;
+ }
+
+ .btnEnviar {
+     color: #fff;
+     font-size: 17px;
+     background: #00995d;
+     padding: 10px 20px;
+     width: 280px;
+     border-radius: 8px;
+     font-weight: 900;
+ }
+
+ .btnEnviar:hover {
+     transition: background 1s all;
+     color: #00995d;
+     opacity: 0.8;
+ }
+
+ .caixaPlanos {
+     text-align: center;
+     border: 1px solid #4CAF50;
+     padding: 15px;
+     border-radius: 8px;
+     text-align: center;
+     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+ }
+
+ .form-control {
+     border: 1px solid #4CAF50;
+ }
+
+ .form-control:focus {
+     border-bottom: 2px solid #0a5f55;
+ }
+
+ .togInp label {
+     display: inline-block;
+     padding: 9px 17px !important;
+     margin: 13px 0px 0px -3px !important;
+     font-weight: 600;
+     -webkit-border-radius: 50px;
+     -moz-border-radius: 50px;
+     border-radius: 50px;
+     -webkit-transition: all .8s ease;
+     transition: all .8s ease;
+ }
+
+
+ .togInp input[type="radio"] {
+     display: none;
+
+ }
+
+ .togInp input:checked+label {
+     background: #0a5f55 !important;
+     color: white;
+ }
+
+ .togInp input[type="radio"].error+label {
+     background: #00995d;
+     color: white;
+ }
+
+ .togInp span.error {
+     right: 17px;
+     margin-top: -46px;
+ }
+
+ .iconDes {
+     font-size: 22px;
+     margin-left: 1px;
+     color: #4CAF50;
+     border-radius: 56px;
+     padding-top: 0px;
+ }
+
+
+ .overlay {
+     position: fixed;
+     top: 0;
+     bottom: 0;
+     left: 0;
+     right: 0;
+     background: rgba(0, 0, 0, 0.7);
+     transition: opacity 500ms;
+     visibility: hidden;
+     opacity: 0;
+ }
+
+ .overlay:target {
+     visibility: visible;
+     opacity: 1;
+ }
+
+ .popup {
+     margin: 70px auto;
+     padding: 20px;
+     background: #fff;
+     border-radius: 5px;
+     width: 50%;
+     height: 50%;
+     position: relative;
+     transition: all 5s ease-in-out;
+ }
+
+ .popup h2 {
+     margin-top: 0;
+     color: #333;
+     font-family: Tahoma, Arial, sans-serif;
+ }
+
+ .popup .close {
+     position: absolute;
+     top: 20px;
+     right: 30px;
+     transition: all 200ms;
+     font-size: 30px;
+     font-weight: bold;
+     text-decoration: none;
+     color: #333;
+ }
+
+ .popup .close:hover {
+     color: #4CAF50;
+ }
+
+ .popup .content {
+     max-height: 92%;
+     overflow: auto;
+ }
+
+ @media screen and (max-width: 700px) {
+     .box {
+         width: 70%;
+     }
+
+     .popup {
+         width: 70%;
+     }
+ }
+
+ @media screen and (min-width: 768px){
+ .card .card-body.card-padding {
+     padding: 25px 27px;
+ }
+}
+/* GRID */
+
+.gridPage .grid {
+ text-align: center;
+ /* padding-top: 30px; */
+}
+
+div.gridDay {
+ /* width: 100px; */
+}
+div.paging, div.gridDay {
+ margin: 0px 2px;
+ float: left;
+ overflow: hidden;
+}
+div.gridDay {
+ /* width: 120px; */
+ font-size: 1em;
+}
+.gridPage .gridDay {
+ text-align: center;
+ position: relative;
+ margin: 0 !important;
+ /* padding-left: 10px; */
+ /* padding-right: 10px; */
+}
+div.gridDay {
+ /* max-width: 300px; */
+ margin: 0px auto;
+}
+
+.gridPage .gridHeader {
+ padding: 10px 0;
+ border-radius: 3px;
+ margin-bottom: 20px;
+ margin-left: 2px;
+ margin-right: 2px;
+ position: relative;
+}
+
+.gridPage .gridHeader:after {
+ content: '';
+ height: 30px;
+ width: 1px;
+ background: #e4e4e4;
+ position: absolute;
+ top: 50%;
+ margin-top: -15px;
+ right: -12px;
+}
+
+div.gridDay h4 {
+ margin: 0px;
+ color: inherit;
+ white-space: nowrap;
+}
+
+div.gridPage div.gridDay span.gridHeaderDayName {
+ font-size: 1.2em;
+ text-transform: uppercase;
+ color: #666;
+ font-weight: 600;
+}
+
+div.gridDay span.gridHeaderDayName, div.gridDay span.gridHeaderDate {
+ font-weight: normal;
+ display: block;
+}
+
+span.gridHeaderDayName, span.gridHeaderDate {
+ display: none;
+}
+
+div.gridPage div.gridDay span.gridHeaderDate, div.gridPage div.gridDay span.gridHeaderFull {
+ font-size: 0.85em;
+}
+
+div.gridDay span.gridHeaderFull {
+ display: none;
+}
+
+div.gridPage div.gridDay span.gridHeaderDate, div.gridPage div.gridDay span.gridHeaderFull {
+ font-size: 0.85em;
+}
+
+.gridPage .gridAgendamentoDia .gridSlot.gridFree a, .gridPage .gridAgendamentoDia .gridSlot.gridHighlight a {
+ text-decoration: none;
+ color: #00995d;
+ position: absolute;
+ margin: 0;
+ padding: 0;
+ top: 50%;
+ left: 5%;
+ width: 90%;
+ z-index: 1;
+ cursor: pointer;
+ transform: translateY(-50%);
+ -webkit-transform: translateY(-50%);
+ -ms-transform: translateY(-50%);
+}
+
+.gridPage .gridAgendamentoDia .gridSlot {
+ font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif;
+ display: block;
+ border-radius: 5px;
+ background: #fff;
+ padding-top: 20px;
+ padding-left: 5px;
+ padding-right: 5px;
+ padding-bottom: 20px;
+ margin: 5px auto 0;
+ white-space: normal;
+ transition: background 0.3s, transform 0.5s;
+ -webkit-transition: background 0.3s, -webkit-transform 0.5s;
+ position: relative;
+ z-index: 2;
+ cursor: pointer;
+ overflow: hidden;
+}
+
+.gridSlot.gridFree:hover {
+ background: #00995d;
+}
+
+.gridSlot.gridFree:hover > a{
+ color: #fff!important;
+}
+
+.gridPage .gridAgendamentoDia .gridSlot.gridFree, .gridPage .gridAgendamentoDia .gridSlot.gridHighlight {
+ border: 1px solid #00995d;
+ cursor: pointer;
+}
+
+div.gridSlot {
+ padding: 2px;
+ margin: 4px 0px;
+ white-space: nowrap;
+ /* text-align: center; */
+}
+
+.gridPage .gridAgendamentoDia .gridSlot.gridBusy {
+ border: 1px solid #e4e4e4;
+ background: #ffffff;
+}
+
+.gridPage .gridAgendamentoDia .gridSlot span {
+ text-decoration: none;
+ color: #e4e4e4;
+ position: absolute;
+ margin: 0;
+ padding: 0;
+ top: 50%;
+ left: 5%;
+ width: 90%;
+ transform: translateY(-50%);
+ -webkit-transform: translateY(-50%);
+ -ms-transform: translateY(-50%);
+}
+
+div.gridBusy, div.gridTechnicallyFree {
+ color: #DDD;
+ text-decoration: line-through;
+}
+
+.gridPage .gridAgendamentoDia .gridSlot.gridHighlight {
+ background: #00995d;
+}
+.gridPage .gridAgendamentoDia .gridSlot.gridFree, .gridPage .gridAgendamentoDia .gridSlot.gridHighlight {
+ border: 1px solid #00995d;
+ cursor: pointer;
+}
+
+div.gridHighlight {
+ background-color: #FAEAC3;
+}
+
+.gridPage .gridAgendamentoDia .gridSlot.gridHighlight a, .gridPage .gridAgendamentoDia .gridSlot.gridHighlight span {
+ color: #ffffff;
+ text-decoration: none;
+}
+
+.btnDiaSemana {
+ align-self: center;
+ padding: 20px 10px 18px 10px;
+ font-family: arial;
+ font-size: 18px;
+ letter-spacing: 1px;
+ text-transform: uppercase;
+ text-align: center;
+ background: white;
+ color: #00995d;
+ border: 1px solid #00995d;
+ border-radius: 10px;
+ transition: all 0.1s ease-in-out;
+ cursor: pointer;
+}
+
+.btnDatas {	
+ transition: 0.3s;
+}
+
+.btnDatas.selected {
+ background: #00995d;
+  color: white;
+}
+
+.btnDiaSemana:hover{
+background: #00995d;
+color: white;
+}
+
+.btnDiaSemana:active{
+transform: scale(1.025);
+}
+
+/* .gridHeaderDayName:before {
+ content: attr(data-content);
+}
+
+.gridHeaderDate:before {
+ content: attr(data-content);
+} */
+
+#agendamentoUm:before, #agendamentoDois:before, #agendamentoTres:before, #agendamentoQuatro:before, #agendamentoCinco:before {
+ content: attr(data-content);
+}
+
+.hide {
+ display:none;
+}
+
+.show {
+ display:unset;
+}
+
+/*
+==============================================
+pullDown
+==============================================
+*/
+
+.confirmarAgendamento {
+ padding: 10px 50px;
+ border-radius: 39px;
+ margin-top: 30px;
+}
+
+.pullDown{
+ animation-name: pullDown;
+ -webkit-animation-name: pullDown;	
+
+ animation-duration: .6s;	
+ -webkit-animation-duration: .6s;
+
+ animation-timing-function: ease-out;	
+ -webkit-animation-timing-function: ease-out;	
+
+ transform-origin: 50% 0%;
+ -ms-transform-origin: 50% 0%;
+ -webkit-transform-origin: 50% 0%; 		
+}
+
+@keyframes pullDown {
+ 0% {
+     transform: scaleY(0.1);
+ }
+ 60% {
+     transform: scaleY(0.98);
+ }
+ 100% {
+     transform: scaleY(1);
+ }							
+}
+
+@-webkit-keyframes pullDown {
+ 0% {
+     -webkit-transform: scaleY(0.1);
+ }
+ 60% {
+     -webkit-transform: scaleY(0.98);
+ }
+ 100% {
+     -webkit-transform: scaleY(1);
+ }		
+}
+
+

@@ -1,0 +1,172 @@
+
+<div class="page-wrapper chiller-theme toggled">
+  <a id="show-sidebar" class="btn btn-sm btn-dark" href="#">
+    <i class="fas fa-bars"></i>
+  </a>
+  <nav id="sidebar" class="sidebar-wrapper">
+    <div class="sidebar-content">
+      <div class="sidebar-brand">
+        <a href="#">Modúlo Paciente</a>
+        <div id="close-sidebar">
+          <i class="fas fa-times"></i>
+        </div>
+      </div>
+      <div class="sidebar-header">
+        <div class="user-pic">
+          <img class="img-responsive img-rounded" src="/img/admin.png" width="50" height="50" alt="User picture">
+        </div>
+        <div class="user-info">
+          <span class="user-name"><?=$this->view->info_user['name_patient']?> </span>
+          <span class="user-role">Paciente</span>
+        </div>
+      </div>
+      <!-- sidebar-search  -->
+      <div class="sidebar-menu">
+        <ul>
+          <li class="header-menu">
+            <span>General</span>
+          </li>
+          <li class="sidebar-dropdown">
+            <a href="#">
+              <i class="fa fa-tachometer-alt"></i>
+              <span>Perfil</span>
+            </a>
+            <div class="sidebar-submenu">
+              <ul>
+                <li>
+                  <a href="/config-patient">Configurações</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa fa-folder"></i>
+              <span>Health+</span>
+            </a>
+          </li>
+          
+          
+          <li class="header-menu">
+            <span>Serviços</span>
+          </li>
+          <li class="sidebar-dropdown">
+            <a href="#">
+              <i class="fa fa-user"></i>
+              <span>Exames</span>
+            </a>
+            <div class="sidebar-submenu">
+              <ul>
+                <li>
+                  <a id="patient-register" href="/exame-schedule-index">Marcações</a>
+                </li>
+                <li>
+                  <a href="/list-exame-patient">Acompanhamento</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa fa-folder"></i>
+              <span>Histórico Hospitalar</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!-- sidebar-menu  -->
+    </div>
+    <!-- sidebar-content  -->
+    <div class="sidebar-footer">
+      <a href="/logout">
+        <i class="fa fa-power-off"></i>
+      </a>
+    </div>
+  </nav>
+  <main class="page-content">
+  
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" async>
+$(".sidebar-dropdown > a").click(function() {
+  $(".sidebar-submenu").slideUp(200);
+  if (
+    $(this)
+      .parent()
+      .hasClass("active")
+  ) {
+    $(".sidebar-dropdown").removeClass("active");
+    $(this)
+      .parent()
+      .removeClass("active");
+  } else {
+    $(".sidebar-dropdown").removeClass("active");
+    $(this)
+      .next(".sidebar-submenu")
+      .slideDown(200);
+    $(this)
+      .parent()
+      .addClass("active");
+  }
+});
+
+$("#close-sidebar").click(function() {
+  $(".page-wrapper").removeClass("toggled");
+});
+$("#show-sidebar").click(function() {
+  $(".page-wrapper").addClass("toggled");
+});
+
+
+
+
+/*
+var btn = document.getElementById('patient-register');
+var container = document.querySelector('.content-patient-register');
+btn.addEventListener('click', function() {
+    
+  if(container.style.display === 'block') {
+      container.style.display = 'none';
+  } else {
+      container.style.display = 'block';
+  }
+});
+
+*/
+
+var btn = document.getElementById('patient-register');
+$(document).ready(function(){
+  btn.addEventListener('click', function(){
+              
+            $(function(){
+              console.log("aaaaaaaaaaaa");
+               
+              $("#content-patient-register").load("/register-patient"); 
+            
+                
+               
+            });
+        })
+   });
+
+var btn2 = document.getElementById('leads-solicitations');
+$(document).ready(function(){
+  btn2.addEventListener('click', function(){
+              
+            $(function(){
+              console.log("aaaaaaaaaaaa");
+                
+                $("#content-lead-register").load("/leads-solicitation"); 
+             
+                
+               
+            });
+        })
+   });
+
+   
+
+
+</script>

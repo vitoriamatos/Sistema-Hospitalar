@@ -1,0 +1,172 @@
+
+<?=$this->dashboard_patient();?>
+
+
+<header>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/js/schedule.js" ></script>
+    <link rel="stylesheet" href="/css/schedule.css" />
+</header>
+
+<section id="main">
+
+<section>
+    <div class="container">
+        <div class="card">
+            <div class="card-header ch-alt text-center">
+                <img class="i-logo" src="" alt="">
+            </div>
+            <div id="loadCompletoEmail" style="display: none; background: #ffffff8a; position: absolute; width: 100%; height: 100%; top: 0px; left: 0px; z-index: 9999; text-align: center;">
+                <div class="loadingio-spinner-ellipsis-vch946vwnpa">
+                    <div class="ldio-y7e8hejt6r8">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+            <form action="/register-exame-schedule" method="post">
+                        <div class="col-md-12 divAgendamento" style="text-align: center; ">
+                            <h3 class="texto_formulario textBlack my-0">Estamos quase lá!</h3>
+                            <h4 class="mt-0 subtituloAgend ">Escolha de o melhor horários que gostaria de fazer seu exame.</h4>
+                            <div class="card mt-4">
+                                <div class="card-body card-padding" style="padding-top: 0px;">
+                                    <div class="gridPage yesFree noTimezone noJumpDate noPeriodButtons" id="gridPage" style="visibility: visible;">
+                                       
+                                        <div role="form" aria-labelledby="formInstructions" class="grid cols7 showTechnicallyFree" style="width: auto; max-width: 800px; margin: 0px auto;">
+                                            <?php
+                                                $hoje = date('d/m/Y');
+                                                $data = DateTime::createFromFormat('d/m/Y', $hoje);
+                                                $dats = $data->add(new DateInterval('P1D'));
+                                                
+                                                $data2 = DateTime::createFromFormat('d/m/Y', $hoje);
+                                                $dats2 = $data2->add(new DateInterval('P2D'));
+                                                
+                                                $data3 = DateTime::createFromFormat('d/m/Y', $hoje);
+                                                $dats3 = $data3->add(new DateInterval('P3D'));
+                                                
+                                                $diaDaSem = $dats->format('D');
+                                                $diaDaSem2 = $dats2->format('D');
+                                                $diaDaSem3 = $dats3->format('D');
+                                                
+                                                
+                                                switch($diaDaSem){
+                                                case 'Mon': $diaDaSem = 'QUA'; $diaDaSem2 = 'QUI'; $diaDaSem3 = 'SEX'; 
+                                                    $dats = $data->add(new DateInterval('P2D'));
+                                                    $dats2 = $data2->add(new DateInterval('P2D'));
+                                                    $dats3 = $data3->add(new DateInterval('P2D'));
+                                                break;
+                                                case 'Tue': $diaDaSem = 'QUA'; $diaDaSem2 = 'QUI'; $diaDaSem3 = 'SEX'; 
+                                                    $dats = $data->add(new DateInterval('P1D'));
+                                                    $dats2 = $data2->add(new DateInterval('P1D'));
+                                                    $dats3 = $data3->add(new DateInterval('P1D'));
+                                                break;
+                                                case 'Wed': $diaDaSem = 'QUA'; $diaDaSem2 = 'QUI'; $diaDaSem3 = 'SEX'; 
+                                                break;
+                                                case 'Thu': $diaDaSem = 'QUI'; $diaDaSem2 = 'SEX'; $diaDaSem3 = 'SEG';
+                                                    $dats3 = $data3->add(new DateInterval('P2D')); 
+                                                break;
+                                                case 'Fri': $diaDaSem = 'SEX'; $diaDaSem2 = 'SEG'; $diaDaSem3 = 'TER';
+                                                    $dats2 = $data2->add(new DateInterval('P2D'));
+                                                    $dats3 = $data3->add(new DateInterval('P2D'));
+                                                break;
+                                                case 'Sat': $diaDaSem = 'SEG'; $diaDaSem2 = 'TER'; $diaDaSem3 = 'QUA';
+                                                    $dats = $data->add(new DateInterval('P2D'));
+                                                    $dats2 = $data2->add(new DateInterval('P2D'));
+                                                    $dats3 = $data3->add(new DateInterval('P2D'));
+                                                break;
+                                                case 'Sun': $diaDaSem = 'TER'; $diaDaSem2 = 'QUA'; $diaDaSem3 = 'QUI';
+                                                    $dats = $data->add(new DateInterval('P2D'));
+                                                    $dats2 = $data2->add(new DateInterval('P2D'));
+                                                    $dats3 = $data3->add(new DateInterval('P2D'));
+                                                break;
+                                                
+                                                }
+                                                
+                                                $dataHoje = $dats->format('d/m/Y');
+                                                $dataAmn = $dats2->format('d/m/Y');
+                                                $dataDpsAmn = $dats3->format('d/m/Y');
+                                                
+                                                ?>
+                                            <div class="gridDays my-8 ">
+                                                <div class="row mb-8">
+                                                    <div class="col-md-12" style="margin-bottom: 30px;">
+                                                        <button  type="submit"  class="btn btn-primary waves-effect confirmarAgendamento hide" style="width: 56%;">Confirmar Agendamento</button>
+                                                    </div>
+                                                    <div class="col-12 mb-3" style="font-size:18px;">
+                                                        <h6 id="agendamentoUmRelogio" class="hide" style="color: #00995d;">		<i class="fa fa-clock-o" style="font-size:1rem;"></i><span id="agendamentoUm" 	  data-content=""></span></h6>
+                                                        <h6 id="agendamentoDoisRelogio" class="hide" style="color: #00995d;">	<i class="fa fa-clock-o" style="font-size:1rem;"></i><span id="agendamentoDois"   data-content=""></span></h6>
+                                                        <h6 id="agendamentoTresRelogio" class="hide" style="color: #00995d;">	<i class="fa fa-clock-o" style="font-size:1rem;"></i><span id="agendamentoTres"   data-content=""></span></h6>
+                                                        <h6 id="agendamentoQuatroRelogio" class="hide" style="color: #00995d;">	<i class="fa fa-clock-o" style="font-size:1rem;"></i><span id="agendamentoQuatro" data-content=""></span></h6>
+                                                        <h6 id="agendamentoCincoRelogio" class="hide" style="color: #00995d;">	<i class="fa fa-clock-o" style="font-size:1rem;"></i><span id="agendamentoCinco"  data-content=""></span></h6>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <div class="btnDiaSemana btnDatas" id="data-1" data-input="<?= $dataHoje ?>" data-content="<?= $diaDaSem ?> <?= $dataHoje ?>"><?= $diaDaSem ?></br><?= $dataHoje ?></div>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <div class="btnDiaSemana btnDatas" id="data-2" data-input="<?= $dataAmn ?>" data-content="<?= $diaDaSem2 ?> <?= $dataAmn ?>"><?= $diaDaSem2 ?></br><?= $dataAmn ?></div>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <div class="btnDiaSemana btnDatas" id="data-3" data-input="<?= $dataDpsAmn ?>" data-content="<?= $diaDaSem3 ?> <?= $dataDpsAmn ?>"><?= $diaDaSem3 ?></br><?= $dataDpsAmn ?></div>
+                                                    </div>
+                                                </div>
+                                                <input type="hidden" id="horarios" name="horarios">
+                                                <input type="hidden" id="horariosId">
+                                                <input type="hidden" id="diaDaSemSelecionado" data-content="">
+                                                <input type="hidden" value="<?= $this->view->info_user['id']?>" id="idPacient" name="idPacient">
+                                                <input type="hidden" value="<?=$_GET['id']?>" id="idExame" name="idExame">
+                                               
+                                                <?php for($i = 1; $i <= 3; $i++): ?>
+                                                <div class="row hide" id="datas_<?=$i?>" style=>
+                                                    <div class="gridDays my-4 ">
+                                                        <div class="col-10 offset-1" style=>
+                                                            <div class="gridAgendamentoDia row">
+                                                                <?php
+                                                                    $horariosAgendamento = [    
+                                                                        '8:00','8:20','8:40',
+                                                                        '9:00','9:20','9:40',
+                                                                        '10:00','10:20','10:40',
+                                                                        '11:00','11:20','11:40',
+                                                                        '13:00','13:20','13:40',
+                                                                        '14:00','14:20','14:40',
+                                                                        '15:00','15:20','15:40',
+                                                                        '16:00','16:20','16:40',
+                                                                        '17:00','17:20','17:40'
+                                                                    ];
+                                                                    
+                                                                    foreach($horariosAgendamento as $key => $horario){ 
+                                                                    ?>					
+                                                                <div class="col-3">
+                                                                    <div id="data_<?=$i?>_horario_<?= $key ?>" class="gridSlot gridFree gridAm adicionaHorario removerHorario" value="<?= $horario ?>" data-horario-selecionado="">
+                                                                        <a id="button-<?= $horario ?>" aria-labelledby="button-<?= $horario ?> col-header-1" role="button">
+                                                                        <?= $horario ?></a>
+                                                                    </div>
+                                                                </div>
+                                                                <?php
+                                                                    }
+                                                                    ?>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <?php endfor?>
+                                                <div style="clear:both;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+   

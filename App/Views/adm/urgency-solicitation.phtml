@@ -1,0 +1,48 @@
+
+<?=$this->dashboard();?>
+
+<div class="container cards-geral" style="background-color: white;">
+  <div class="d-flex justify-content-center mt-5">
+    <div class="card" style="width: 70rem;  margin-bottom:10%;">
+      <div class="card-body">
+        <div class="row">
+        <div class="col-md-12 ">
+             <p class="text-center">  Pronto Socorro - Triagem<hr class="rounded">
+              </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            
+            <form action="/find-patient-urgency" method="post">
+              <div class="row">
+              <div class="form-group col-md-8">
+                <input type="text" value="<?= $this->view->user['cpf'] ?>"  pacheloader name="cpf" class="form-control" placeholder="CPF">
+              </div>
+              <div class="form-group col-md-3">
+                <button type="submit" class="btn btn-primary btn-block">Pesquisar</button>
+              </div>
+
+
+              
+              
+             
+            </div>
+           
+              <?php if($this->view->registerError) { ?>
+
+                <small class="form-text text-danger">*Erro ao tentar realizar o cadastro, verifique se os campos foram preenchidos corretamente.</small>
+              </div>
+              <?php } ?>
+
+           
+            </form>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+

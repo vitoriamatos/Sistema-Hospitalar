@@ -1,0 +1,55 @@
+
+<?=$this->dashboard();?>
+<script type="text/javascript" src="/js/script.js" ></script>
+<div class="cards-geral" style="background-color: white;">
+<div class="table-title " style="margin-top: 5%; margin-left: 40%;">
+<h3>Pacientes</h3>
+</div>
+<hr class="rounded">
+<table class="table-fill col-md- 12">
+<thead>
+<tr>
+<th class="text-left">Nome</th>
+<th class="text-left">Prioridade</th>
+<th class="text-left">Médico Responsável</th>
+<th class="text-left">Detalhes</th>
+</tr>
+</thead>
+<tbody class="table-hover">
+
+  
+<?php foreach ($this->view->urgencies as $index => $urgency) : ?>
+<tr>
+<td class="tex-left"> <?=$urgency['name_patient']?></td>
+<td class="tex-left"> <?=$urgency['priority']?></td>
+<td class="tex-left"> <?=$urgency['name_doctor']?></td>
+<td class="tex-left">  <button type="submit" id="<?=$urgency['id']?>" class="btn btn-ecommerce btn-block p-2 shadow rounded-pill bt-info-urgency" style="color: #fff">Vizualizar</button></td>
+</tr>
+<?php endforeach ?>
+
+
+</tbody>
+</table>
+
+</main>
+  
+<script type="text/javascript">
+
+var btn = document.getElementById('patient-register');
+$(document).ready(function(){
+  btn.addEventListener('click', function(){
+              
+            $(function(){
+              console.log("aaaaaaaaaaaa");
+               
+              $("#content-patient-register").load("/register-patient"); 
+            
+                
+               
+            });
+        })
+   });
+
+
+</script>
+ 

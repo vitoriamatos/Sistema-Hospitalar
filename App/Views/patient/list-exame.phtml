@@ -1,0 +1,39 @@
+
+<?=$this->dashboard_patient();?>
+<script type="text/javascript" src="/js/script.js" ></script>
+<div class="table-title">
+<h3>Pacientes</h3>
+</div>
+<table class="table-fill col-md- 12">
+<thead>
+<tr>
+<th class="text-left">Exame</th>
+<th class="text-left">Dia</th>
+<th class="text-left">Realisado</th>
+<th class="text-left">Detalhes</th>
+</tr>
+</thead>
+<tbody class="table-hover">
+
+  
+<?php foreach ($this->view->info_exame as $index => $exame) : ?>
+<tr>
+<input type="hidden" name="id" value="<?= $exame['id'] ?>">
+<td class="tex-left"> <?=$exame['name_exame']?></td>
+<td class="tex-left"> <?=$exame['hour']?></td>
+
+<?php if($exame['released'] == '0'):?>
+  <td class="tex-left">Exame ainda não realizado</td>
+<?php else: ?>
+<td class="tex-left">Exame pronto</td>
+<?php endif ?>
+<td class="tex-left">  <button type="submit" id="<?=$exame['id']?>" class="btn btn-ecommerce btn-block p-2 shadow rounded-pill bt-exame-follow-up" style="color: #fff">Acompanhamento</button></td>
+</tr>
+<?php endforeach ?>
+
+
+</tbody>
+</table>
+
+</main>
+ 

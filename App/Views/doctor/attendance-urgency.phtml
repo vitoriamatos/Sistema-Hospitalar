@@ -1,0 +1,136 @@
+<?= $this->dashboard_doctor(); ?>
+<div class="container">
+  <div class="d-flex justify-content-center mt-5">
+    <div class="card" style="width: 70rem; ">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-12">
+            <h5> Informação do Paciente - <?= $this->view->patient['name'] ?></h5>
+            <hr>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+
+            <form action="/regiter-data-patient" method="post">
+              
+
+              <div class="row">
+                <div class="form-group col-md-6">
+                  <input type="text" value="<?= $this->view->patient['name_patient'] ?>" readonly pacheloader name="name" class="form-control" placeholder="Nome">
+                </div>
+
+                <div class="form-group col-md-6">
+                  <input type="text" value="<?= $this->view->patient['email'] ?>" readonly name="email" class="form-control" placeholder="E-mail">
+                </div>
+
+                <div class="form-group col-md-4">
+                  <input type="text" value="<?= $this->view->patient['cpf'] ?>" readonly name="cpf" class="form-control" placeholder="CPF">
+                </div>
+
+                <div class="form-group col-md-4">
+                  <input type="text" value="<?= $this->view->patient['cellphone'] ?>" readonly name="cellphone" class="form-control" placeholder="Telefone">
+                </div>
+
+                <div class="form-group col-md-4">
+                  <input type="text" value="<?= $this->view->patient['born_register'] ?>" readonly name="born_register" class="form-control" placeholder="Data de Nascimento">
+                </div>
+
+                <div class="col-md-12">
+                  <h5> Endereço </h5>
+                  <hr>
+                </div>
+                <div class="form-group col-md-4">
+                  <input type="text" value="<?= $this->view->patient['cep'] ?>" readonly name="cep" class="form-control" placeholder="CEP">
+                </div>
+
+                <div class="form-group col-md-4">
+                  <input type="text" value="<?= $this->view->patient['citty'] ?>" readonly name="citty" class="form-control" placeholder="Cidade">
+                </div>
+
+                <div class="form-group col-md-4">
+                  <input type="text" value="<?= $this->view->patient['street'] ?>" readonly name="street" class="form-control" placeholder="Rua">
+                </div>
+
+                <div class="form-group col-md-4">
+                  <input type="text" value="<?= $this->view->patient['number'] ?>" readonly name="number" class="form-control" placeholder="Número">
+                </div>
+
+                <div class="form-group col-md-4">
+                  <input type="text" value="<?= $this->view->patient['district'] ?>" readonly name="district" class="form-control" placeholder="Bairro">
+                </div>
+
+            </form>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="">
+  <div class="d-flex justify-content-center mt-4">
+    <div class="card" style="width: 80rem; ">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-12">
+            <h5> Triagem </h5>
+            <hr>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+
+            <form action="/register-attendance-urgency" method="post">
+              <div class="row">
+                <div class="form-group col-md-6">
+                <input type="hidden" name="id_doctor" value="<?= $this->view->info_user['id'] ?>">
+                <input type="hidden" name="id_patient" value="<?= $this->view->patient['id'] ?>">
+                <input type="hidden" name="id" value="<?= $this->view->urgency['id'] ?>">
+             
+                  <textarea require value="<?= $this->view->urgency['symptoms'] ?>" name="symptoms" class="form-control" placeholder="Sintomas"></textarea>
+
+                </div>
+
+                <div class="form-group col-md-3">
+                  <h5>Prioridade</h5>
+                  <div class="form-group col-md-12">
+                    <h6>Normal</h6>
+                    <input type="radio" name="priority" id="1" value="1" checked="checked" />
+                    <h6>Alta</h6>
+                    <input type="radio" name="priority" id="2" value="2" />
+                  </div>
+                </div>
+                <div class="col-md-6 center">
+                  <textarea require value="<?= $this->view->urgency['diagnosis'] ?>" name="diagnosis" class="form-control" placeholder="Diagnóstico"></textarea>
+                </div>
+                <div class="col-md-6 center">
+                  <textarea require value="<?= $this->view->urgency['prescription'] ?>" name="prescription" class="form-control" placeholder="Receita"></textarea>
+                </div>
+                <div class="col-md-6 center">
+                  <textarea require value="<?= $this->view->urgency['observation'] ?>" name="observation" class="form-control" placeholder="Observações"></textarea>
+                </div>
+
+                <div class="col-md-6 center">
+                  <button type="submit" class="btn btn-primary btn-block">Salvar</button>
+                </div>
+                <div class="col-md-6 center">
+                <td class="tex-left">  <button type="" id="<?=$this->view->urgency['id']?>" class="btn btn-ecommerce btn-block p-2 shadow rounded-pill bt-finish" style="color: #fff">Finalizar Atendimento</button></td>
+                </div>
+
+
+              </div>
+
+            </form>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

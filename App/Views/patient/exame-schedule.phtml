@@ -1,0 +1,33 @@
+
+<?=$this->dashboard_patient();?>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<div class="container text-center col-md-12 car-area" >
+      <div class="text-center title title-div justify-content-center"  style="color:  #000; margin-top:5%">
+        <h3>Escolha qual exame deseja agendar</h3>
+        <hr class="rounded">
+      </div>
+    
+      <div class="card-deck">
+            <?php foreach ($this->view->info_exame as $index => $exame) : ?>
+                <div class="card card-plan col-md-6" style="padding: 0%">
+                <div class="">
+                    <div class="bg-white p-5 rounded-lg shadow head " >
+                   
+                      <h6 class=" text-uppercase font-weight-bold mb-4" > <?= $exame['name_exame']?> </h6>
+                      <hr class="rounded-planos">
+                      <div class="custom-separator my-4 mx-auto bg-success"></div>
+                     
+                      <ul class="list-unstyled my-2 text-small text-left font-weight-normal">
+                        <li class="mb-3">
+                      </ul>
+                     
+                      <button type="submit" id="<?=$exame['id']?>" class="btn btn-ecommerce btn-block p-2 shadow rounded-pill bt-exame-schedule" style="color: #fff">Agendar</button>
+                     
+                    </div>
+                </div>
+            </div>
+            <?php endforeach ?>
+      </div><!-- fim row text-center align-items-end-->
+    
+    </div><!-- fim div pricipal -->
+    

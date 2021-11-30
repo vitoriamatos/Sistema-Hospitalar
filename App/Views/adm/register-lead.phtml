@@ -1,0 +1,54 @@
+
+<?=$this->dashboard();?>
+<script type="text/javascript" src="/js/script.js" ></script>
+
+<div class="cards-geral" style="background-color: white;">
+<div class="table-title " style="margin-top: 5%; margin-left: 25%;">
+<h3>Solicitações Ecommerce</h3>
+</div>
+<hr class="rounded">
+<table class="table-fill col-md- 12">
+<thead>
+<tr>
+<th class="text-left">Nome</th>
+<th class="text-left">Plano</th>
+<th class="text-left">Action</th>
+</tr>
+</thead>
+<tbody class="table-hover">
+
+  
+<?php foreach ($this->view->leads as $index => $lead) : ?>
+<tr>
+<td class="tex-left"> <?=$lead['name_lead']?></td>
+<td class="tex-left"> <?=$lead['name']?></td>
+<td class="tex-left">  <button type="submit" id="<?=$lead['id']?>" class="btn btn-ecommerce btn-block p-2 shadow rounded-pill bt-lead" style="color: #fff">Verificar</button></td>
+</tr>
+<?php endforeach ?>
+
+
+</tbody>
+</table>
+
+</main>
+  
+<script type="text/javascript">
+
+var btn = document.getElementById('patient-register');
+$(document).ready(function(){
+  btn.addEventListener('click', function(){
+              
+            $(function(){
+              console.log("aaaaaaaaaaaa");
+               
+              $("#content-patient-register").load("/register-patient"); 
+            
+                
+               
+            });
+        })
+   });
+
+
+</script>
+ 
