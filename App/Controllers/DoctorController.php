@@ -8,9 +8,6 @@ use MF\Model\Container;
 
 class DoctorController extends Action
 {
-
-	
-
 	public function login()
 	{
 
@@ -108,7 +105,7 @@ class DoctorController extends Action
         $this->view->info_user = $doctor->getDoctor();
 
         $this->view->user = array(
-            'cpf' => $_POST['cpf'],
+            'cpf' => "",
         );
         $this->view->registerError = false;
         $this->render("info-urgency");

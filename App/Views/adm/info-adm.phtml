@@ -1,0 +1,109 @@
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="\css\util.css">
+<link rel="stylesheet" type="text/css" href="\css\main.css">
+<!--===============================================================================================-->
+
+<?=$this->dashboard();?>
+<div class="container">
+  <div class="d-flex justify-content-center mt-5">
+    <div class="card cards-geral " style="width: 30rem;  margin-bottom:10%;  margin-right: 20px">
+      <div class="card-body container-plain">
+        <div class="card-body  ">
+          <div class="row">
+            <div class="col-md-12" style="margin-bottom: 0px; ">
+              <h3>Administrador</h3><br>
+              
+              <hr style="background-color: white; margin-top: 20%;">
+              
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="card cards-geral " id="div1" style="width: 50rem;  margin-bottom:10%;">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-12">
+
+            <h6> Dados Pessoais </h6>
+            <hr>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col" >
+
+            <form action="/regiter-data-patient" method="post">
+              <input type="hidden" name="id" value="<?= $this->view->info_user['id'] ?>">
+              <div class="row">
+                <div class="form-group col-md-12 wrap-input100 validate-input ">
+                  <input type="text" require class="input100"  readonly  value="<?=  $this->view->info_user['name'] ?>" name="name" class="form-control" placeholder="Nome">
+                  <span class="focus-input100"></span>
+                  <span class="symbol-input100">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                  </span>
+                </div>
+                <div class="form-group col-md-12 wrap-input100 validate-input ">
+                  <input type="text" class="input100"  readonly value="<?=  $this->view->info_user['email'] ?>" require name="email" class="form-control" placeholder="Email">
+                  <span class="focus-input100"></span>
+                  <span class="symbol-input100">
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                  </span>
+                </div>
+
+                <div class="form-group col-md-6  wrap-input100 validate-input">
+                  <input type="password" class="input100"  readonly value="<?= md5( $this->view->patient['password'] )?>" require name="password" class="form-control" placeholder="Senha">
+                  <span class="focus-input100"></span>
+                  <span class="symbol-input100">
+                    <i class="fa fa-key" aria-hidden="true"></i>
+                  </span>
+                </div>
+
+              <div class="col-md-6 center">
+              <button type="button" id="btn-edit-patient" style="display: block" class="btn btn-primary btn-block">Alterar Senha</button>
+              <button type="submit" id="btn-save-edit-patient" style="display: none" class="btn btn-primary btn-block">Salvar</button>
+             </div>
+           
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script type="text/javascript">
+
+
+
+function mostrar(id) {
+  if (document.getElementById(id).style.display !== "none") {
+    document.getElementById(id).style.display = "none";
+    return;
+  }
+  Array.from(document.getElementsByClassName("hidden")).forEach(
+    div => (div.style.display = "none")
+  );
+  document.getElementById(id).style.display = "block";
+}
+
+</script>

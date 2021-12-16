@@ -1,136 +1,212 @@
-<?= $this->dashboard_doctor(); ?>
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="\css\util.css">
+<link rel="stylesheet" type="text/css" href="\css\main.css">
+<!--===============================================================================================-->
+
+<?=$this->dashboard_doctor();?>
 <div class="container">
   <div class="d-flex justify-content-center mt-5">
-    <div class="card" style="width: 70rem; ">
+   
+    <div class="card cards-geral " id="div1" style="width: 50rem;  ">
       <div class="card-body">
         <div class="row">
           <div class="col-md-12">
-            <h5> Informação do Paciente - <?= $this->view->patient['name'] ?></h5>
+
+            <h6> Dados Pessoais </h6>
             <hr>
           </div>
         </div>
 
         <div class="row">
-          <div class="col">
+          <div class="col" >
 
-            <form action="/regiter-data-patient" method="post">
-              
+            <form action="/regiter-attendece-urgency" method="post">
+
+              <input type="hidden" name="id_plan" value="<?= $this->view->id_plains['id'] ?>">
+
+              <input type="hidden" name="id" value="<?= $this->view->patient['id'] ?>">
+              <input type="hidden" name="id_plan" value="<?= $this->view->patient['id_plan'] ?>">
 
               <div class="row">
-                <div class="form-group col-md-6">
-                  <input type="text" value="<?= $this->view->patient['name_patient'] ?>" readonly pacheloader name="name" class="form-control" placeholder="Nome">
+                <div class="form-group col-md-6 wrap-input100 validate-input ">
+                  <input type="text" require class="input100"  readonly  value="<?=  $this->view->patient['name'] ?>" name="name" class="form-control" placeholder="Nome">
+                  <span class="focus-input100"></span>
+                  <span class="symbol-input100">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                  </span>
+                </div>
+                <div class="form-group col-md-6 wrap-input100 validate-input ">
+                  <input type="text" class="input100"  readonly value="<?=  $this->view->patient['email'] ?>" require name="email" class="form-control" placeholder="Email">
+                  <span class="focus-input100"></span>
+                  <span class="symbol-input100">
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                  </span>
                 </div>
 
-                <div class="form-group col-md-6">
-                  <input type="text" value="<?= $this->view->patient['email'] ?>" readonly name="email" class="form-control" placeholder="E-mail">
+                <div class="form-group col-md-6  wrap-input100 validate-input">
+                  <input type="text" class="input100"  readonly value="<?=  $this->view->patient['cpf'] ?>" require name="cpf" class="form-control" placeholder="CPF">
+                  <span class="focus-input100"></span>
+                  <span class="symbol-input100">
+                    <i class="fa fa-file-o" aria-hidden="true"></i>
+                  </span>
                 </div>
 
-                <div class="form-group col-md-4">
-                  <input type="text" value="<?= $this->view->patient['cpf'] ?>" readonly name="cpf" class="form-control" placeholder="CPF">
+                <div class="form-group col-md-6  wrap-input100 validate-input">
+                  <input type="text" class="input100"  readonly value="<?=  $this->view->patient['cellphone'] ?>" require name="cellphone" class="form-control" placeholder="Telefone">
+                  <span class="focus-input100"></span>
+                  <span class="symbol-input100">
+                    <i class="fa fa-phone" aria-hidden="true"></i>
+                  </span>
+               
                 </div>
 
-                <div class="form-group col-md-4">
-                  <input type="text" value="<?= $this->view->patient['cellphone'] ?>" readonly name="cellphone" class="form-control" placeholder="Telefone">
+                <div class="form-group col-md-6  wrap-input100 validate-input">
+                  <input type="text" class="input100" readonly value="<?=  $this->view->patient['born_register'] ?>" require name="born_register" class="form-control" placeholder="Data de nascimento">
+                  <span class="focus-input100"></span>
+                  <span class="symbol-input100">
+                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                  </span>
+               
                 </div>
 
-                <div class="form-group col-md-4">
-                  <input type="text" value="<?= $this->view->patient['born_register'] ?>" readonly name="born_register" class="form-control" placeholder="Data de Nascimento">
+                <div class="form-group col-md-6  wrap-input100 validate-input">
+                  <input type="text" class="input100"  readonly value="<?=  $this->view->patient['gender'] ?>" require name="gender" class="form-control" placeholder="Gênero">
+                
+                  <span class="focus-input100"></span>
+                  <span class="symbol-input100">
+                    <i class="fa fa-transgender" aria-hidden="true"></i>
+                  </span>
                 </div>
 
                 <div class="col-md-12">
                   <h5> Endereço </h5>
                   <hr>
                 </div>
-                <div class="form-group col-md-4">
-                  <input type="text" value="<?= $this->view->patient['cep'] ?>" readonly name="cep" class="form-control" placeholder="CEP">
+                <div class="form-group col-md-4  wrap-input100 validate-input">
+                  <input type="text" class="input100"  readonly value="<?=  $this->view->patient['cep'] ?>" require name="cep" class="form-control" placeholder="CEP">
+                  <span class="focus-input100"></span>
+                  <span class="symbol-input100">
+                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                  </span>
+                
                 </div>
 
-                <div class="form-group col-md-4">
-                  <input type="text" value="<?= $this->view->patient['citty'] ?>" readonly name="citty" class="form-control" placeholder="Cidade">
+                <div class="form-group col-md-8 wrap-input100 validate-input">
+                  <input type="text" class="input100"  readonly value="<?=  $this->view->patient['citty'] ?>"  require name="citty" class="form-control" placeholder="Cidade">
+                  <span class="focus-input100"></span>
+                  <span class="symbol-input100">
+                    <i class="fa fa-location-arrow" aria-hidden="true"></i>
+                  </span>
+                
                 </div>
 
-                <div class="form-group col-md-4">
-                  <input type="text" value="<?= $this->view->patient['street'] ?>" readonly name="street" class="form-control" placeholder="Rua">
+                <div class="form-group col-md-4  wrap-input100 validate-input">
+                  <input type="text" class="input100"  readonly value="<?=  $this->view->patient['number'] ?>" require name="number" class="form-control" placeholder="Número">
+                  <span class="focus-input100"></span>
+                  <span class="symbol-input100">
+                    <i class="fa fa-sort-numeric-asc" aria-hidden="true"></i>
+                  </span>
+               
                 </div>
 
-                <div class="form-group col-md-4">
-                  <input type="text" value="<?= $this->view->patient['number'] ?>" readonly name="number" class="form-control" placeholder="Número">
+
+                <div class="form-group col-md-8  wrap-input100 validate-input">
+                  <input type="text" class="input100"  readonly value="<?=  $this->view->patient['street'] ?>" require name="street" class="form-control" placeholder="Rua">
+                  <span class="focus-input100"></span>
+                  <span class="symbol-input100">
+                    <i class="fa fa-home" aria-hidden="true"></i>
+                  </span>
+               
                 </div>
 
-                <div class="form-group col-md-4">
-                  <input type="text" value="<?= $this->view->patient['district'] ?>" readonly name="district" class="form-control" placeholder="Bairro">
-                </div>
 
+                <div class="form-group col-md-6  wrap-input100 validate-input">
+                  <input type="text" class="input100"  readonly value="<?=  $this->view->patient['district'] ?>"require name="district" class="form-control" placeholder="Bairro">
+                  <span class="focus-input100"></span>
+                  <span class="symbol-input100">
+                    <i class="fa fa-street-view" aria-hidden="true"></i>
+                  </span>
+                 </div>            
             </form>
-
           </div>
         </div>
-
       </div>
     </div>
   </div>
 </div>
 
-<div class="">
-  <div class="d-flex justify-content-center mt-4">
-    <div class="card" style="width: 80rem; ">
+
+<div class="container">
+  <div class="d-flex justify-content-center mt-5">
+   
+    <div class="card cards-geral " id="div1" style="width: 50rem;  margin-bottom:10%;">
       <div class="card-body">
         <div class="row">
           <div class="col-md-12">
-            <h5> Triagem </h5>
+
+            <h6> Informações da Triagem </h6>
             <hr>
           </div>
         </div>
 
         <div class="row">
-          <div class="col">
+          <div class="col" >
 
-            <form action="/register-attendance-urgency" method="post">
+          <form action="/regiter-data-urgency" method="post">
               <div class="row">
-                <div class="form-group col-md-6">
-                <input type="hidden" name="id_doctor" value="<?= $this->view->info_user['id'] ?>">
-                <input type="hidden" name="id_patient" value="<?= $this->view->patient['id'] ?>">
-                <input type="hidden" name="id" value="<?= $this->view->urgency['id'] ?>">
-             
-                  <textarea require value="<?= $this->view->urgency['symptoms'] ?>" name="symptoms" class="form-control" placeholder="Sintomas"></textarea>
-
-                </div>
-
-                <div class="form-group col-md-3">
-                  <h5>Prioridade</h5>
-                  <div class="form-group col-md-12">
-                    <h6>Normal</h6>
-                    <input type="radio" name="priority" id="1" value="1" checked="checked" />
-                    <h6>Alta</h6>
-                    <input type="radio" name="priority" id="2" value="2" />
-                  </div>
-                </div>
-                <div class="col-md-6 center">
-                  <textarea require value="<?= $this->view->urgency['diagnosis'] ?>" name="diagnosis" class="form-control" placeholder="Diagnóstico"></textarea>
-                </div>
-                <div class="col-md-6 center">
-                  <textarea require value="<?= $this->view->urgency['prescription'] ?>" name="prescription" class="form-control" placeholder="Receita"></textarea>
-                </div>
-                <div class="col-md-6 center">
-                  <textarea require value="<?= $this->view->urgency['observation'] ?>" name="observation" class="form-control" placeholder="Observações"></textarea>
-                </div>
-
-                <div class="col-md-6 center">
-                  <button type="submit" class="btn btn-primary btn-block">Salvar</button>
-                </div>
-                <div class="col-md-6 center">
-                <td class="tex-left">  <button type="" id="<?=$this->view->urgency['id']?>" class="btn btn-ecommerce btn-block p-2 shadow rounded-pill bt-finish" style="color: #fff">Finalizar Atendimento</button></td>
-                </div>
-
-
+              <div class="form-group col-md-6">
+              <input type="hidden" name="id_patient" value="<?= $this->view->patient['id'] ?>">
+                <textarea require value="<?= $this->view->patient['symptoms'] ?>" name="symptoms"class="form-control" placeholder="Sintomas"></textarea>
               </div>
 
+              <div class="form-group col-md-3">
+              <h5>Prioridade</h5>
+              <div class="form-group col-md-12">
+              <h6>Normal</h6>
+              <input type="radio" name="priority" id="1" value="1" checked="checked" />
+              <h6>Alta</h6>
+              <input type="radio" name="priority" id="2" value="2" />
+              </div>
+              </div>
+              <div class="col-md-6 center">
+              <button type="submit" class="btn btn-primary btn-block">Salvar</button>
+             
+            </div>
+             
+            </div>
+          
             </form>
-
           </div>
         </div>
-
       </div>
     </div>
   </div>
 </div>
+
+
+<script type="text/javascript">
+
+
+
+function mostrar(id) {
+  if (document.getElementById(id).style.display !== "none") {
+    document.getElementById(id).style.display = "none";
+    return;
+  }
+  Array.from(document.getElementsByClassName("hidden")).forEach(
+    div => (div.style.display = "none")
+  );
+  document.getElementById(id).style.display = "block";
+}
+
+</script>

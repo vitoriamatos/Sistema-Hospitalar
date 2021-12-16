@@ -93,7 +93,7 @@ class Admin extends Model {
 	}
 	
 	public function getInfoUser(){
-		$query = "SELECT name FROM admins WHERE id = :id_user";
+		$query = "SELECT name, email, password FROM admins WHERE id = :id_user";
 		$stmt = $this->db->prepare($query);
 		$stmt->bindValue(':id_user', $this->__get('id'));
 		$stmt->execute();

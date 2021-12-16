@@ -1,4 +1,16 @@
-
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="\css\util.css">
+<link rel="stylesheet" type="text/css" href="\css\main.css">
 <?=$this->dashboard_patient();?>
 
 
@@ -14,8 +26,8 @@
 <section id="main">
 
 <section>
-    <div class="container">
-        <div class="card">
+    <div class="container" >
+        <div class="card cards-geral" >
             <div class="card-header ch-alt text-center">
                 <img class="i-logo" src="" alt="">
             </div>
@@ -31,10 +43,11 @@
                 </div>
             </div>
             <form action="/register-exame-schedule" method="post">
-                        <div class="col-md-12 divAgendamento" style="text-align: center; ">
+                        <div class="col-md-12 divAgendamento" style="text-align: center;  margin-top:5%; margin-bottom:10%;">
                             <h3 class="texto_formulario textBlack my-0">Estamos quase lá!</h3>
-                            <h4 class="mt-0 subtituloAgend ">Escolha de o melhor horários que gostaria de fazer seu exame.</h4>
-                            <div class="card mt-4">
+                            <h4 class="mt-0 subtituloAgend ">Escolha o melhor horários que gostaria de fazer seu exame.</h4>
+                            <hr class="rounded">
+                            <div class="card mt-4" style="border: none;">
                                 <div class="card-body card-padding" style="padding-top: 0px;">
                                     <div class="gridPage yesFree noTimezone noJumpDate noPeriodButtons" id="gridPage" style="visibility: visible;">
                                        
@@ -99,11 +112,11 @@
                                                         <button  type="submit"  class="btn btn-primary waves-effect confirmarAgendamento hide" style="width: 56%;">Confirmar Agendamento</button>
                                                     </div>
                                                     <div class="col-12 mb-3" style="font-size:18px;">
-                                                        <h6 id="agendamentoUmRelogio" class="hide" style="color: #00995d;">		<i class="fa fa-clock-o" style="font-size:1rem;"></i><span id="agendamentoUm" 	  data-content=""></span></h6>
-                                                        <h6 id="agendamentoDoisRelogio" class="hide" style="color: #00995d;">	<i class="fa fa-clock-o" style="font-size:1rem;"></i><span id="agendamentoDois"   data-content=""></span></h6>
-                                                        <h6 id="agendamentoTresRelogio" class="hide" style="color: #00995d;">	<i class="fa fa-clock-o" style="font-size:1rem;"></i><span id="agendamentoTres"   data-content=""></span></h6>
-                                                        <h6 id="agendamentoQuatroRelogio" class="hide" style="color: #00995d;">	<i class="fa fa-clock-o" style="font-size:1rem;"></i><span id="agendamentoQuatro" data-content=""></span></h6>
-                                                        <h6 id="agendamentoCincoRelogio" class="hide" style="color: #00995d;">	<i class="fa fa-clock-o" style="font-size:1rem;"></i><span id="agendamentoCinco"  data-content=""></span></h6>
+                                                        <h6 id="agendamentoUmRelogio" class="hide" style="color: #3796bf;">		<i class="fa fa-clock-o" style="font-size:1rem;"></i><span id="agendamentoUm" 	  data-content=""></span></h6>
+                                                        <h6 id="agendamentoDoisRelogio" class="hide" style="color: #3796bf;">	<i class="fa fa-clock-o" style="font-size:1rem;"></i><span id="agendamentoDois"   data-content=""></span></h6>
+                                                        <h6 id="agendamentoTresRelogio" class="hide" style="color: #3796bf;">	<i class="fa fa-clock-o" style="font-size:1rem;"></i><span id="agendamentoTres"   data-content=""></span></h6>
+                                                        <h6 id="agendamentoQuatroRelogio" class="hide" style="color: #3796bf;">	<i class="fa fa-clock-o" style="font-size:1rem;"></i><span id="agendamentoQuatro" data-content=""></span></h6>
+                                                        <h6 id="agendamentoCincoRelogio" class="hide" style="color: #3796bf;">	<i class="fa fa-clock-o" style="font-size:1rem;"></i><span id="agendamentoCinco"  data-content=""></span></h6>
                                                     </div>
                                                     <div class="col-4">
                                                         <div class="btnDiaSemana btnDatas" id="data-1" data-input="<?= $dataHoje ?>" data-content="<?= $diaDaSem ?> <?= $dataHoje ?>"><?= $diaDaSem ?></br><?= $dataHoje ?></div>

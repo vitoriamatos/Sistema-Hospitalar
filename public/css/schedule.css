@@ -45,7 +45,7 @@
      }
 
      .bgm-green {
-         background-color: #00995d !important;
+         background-color: #3796bf !important;
      }
 
      .emLinhaPrint {
@@ -82,7 +82,7 @@
  }
 
  button {
-     background: #00995d;
+     background: #3796bf;
      color: #fff;
      padding: 10px 20px;
      border-radius: 10px;
@@ -99,7 +99,7 @@
  button:hover {
      transition: background 1s;
      background: #fff;
-     color: #00995d;
+     color: #3796bf;
  }
 
  p {
@@ -113,7 +113,7 @@
  .btnEnviar {
      color: #fff;
      font-size: 17px;
-     background: #00995d;
+     background: #3796bf;
      padding: 10px 20px;
      width: 280px;
      border-radius: 8px;
@@ -122,7 +122,7 @@
 
  .btnEnviar:hover {
      transition: background 1s all;
-     color: #00995d;
+     color: #3796bf;
      opacity: 0.8;
  }
 
@@ -167,7 +167,7 @@
  }
 
  .togInp input[type="radio"].error+label {
-     background: #00995d;
+     background: #3796bf;
      color: white;
  }
 
@@ -341,7 +341,7 @@ div.gridPage div.gridDay span.gridHeaderDate, div.gridPage div.gridDay span.grid
 
 .gridPage .gridAgendamentoDia .gridSlot.gridFree a, .gridPage .gridAgendamentoDia .gridSlot.gridHighlight a {
  text-decoration: none;
- color: #00995d;
+ color: #3796bf;
  position: absolute;
  margin: 0;
  padding: 0;
@@ -375,7 +375,7 @@ div.gridPage div.gridDay span.gridHeaderDate, div.gridPage div.gridDay span.grid
 }
 
 .gridSlot.gridFree:hover {
- background: #00995d;
+ background: #3796bf;
 }
 
 .gridSlot.gridFree:hover > a{
@@ -383,7 +383,7 @@ div.gridPage div.gridDay span.gridHeaderDate, div.gridPage div.gridDay span.grid
 }
 
 .gridPage .gridAgendamentoDia .gridSlot.gridFree, .gridPage .gridAgendamentoDia .gridSlot.gridHighlight {
- border: 1px solid #00995d;
+ border: 1px solid #3796bf;
  cursor: pointer;
 }
 
@@ -419,10 +419,10 @@ div.gridBusy, div.gridTechnicallyFree {
 }
 
 .gridPage .gridAgendamentoDia .gridSlot.gridHighlight {
- background: #00995d;
+ background: #3796bf;
 }
 .gridPage .gridAgendamentoDia .gridSlot.gridFree, .gridPage .gridAgendamentoDia .gridSlot.gridHighlight {
- border: 1px solid #00995d;
+ border: 1px solid #3796bf;
  cursor: pointer;
 }
 
@@ -435,7 +435,7 @@ div.gridHighlight {
  text-decoration: none;
 }
 
-.btnDiaSemana {
+.btnDiaSemana  {
  align-self: center;
  padding: 20px 10px 18px 10px;
  font-family: arial;
@@ -444,8 +444,8 @@ div.gridHighlight {
  text-transform: uppercase;
  text-align: center;
  background: white;
- color: #00995d;
- border: 1px solid #00995d;
+ color: #3796bf;
+ border: 1px solid #3796bf;
  border-radius: 10px;
  transition: all 0.1s ease-in-out;
  cursor: pointer;
@@ -456,12 +456,12 @@ div.gridHighlight {
 }
 
 .btnDatas.selected {
- background: #00995d;
+ background: #3796bf;
   color: white;
 }
 
 .btnDiaSemana:hover{
-background: #00995d;
+background: #2f7fa1;
 color: white;
 }
 

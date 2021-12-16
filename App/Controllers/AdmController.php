@@ -61,6 +61,18 @@ class AdmController extends Action
 
         $this->adm("index");
     }
+
+    public function config()
+    {
+
+       
+        $adm = Container::getModel('Admin');
+
+       
+        $this->view->info_user = $adm->getInfoUser();
+
+        $this->adm("info-adm");
+    }
     /*=.=.=.=.=.=.=.=PATIENT=.=.=.=.=.=.=.*/
     public function patientRegister()
     {

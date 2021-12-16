@@ -317,19 +317,3 @@ chart.scrollbarX = new am4core.Scrollbar();
 
 </script>
 
-
-typeT buf;
-int front = 0, rear = 0;
-sem empty = n, full = 0;
-sem mutexD = 1, mutexF = 1;
-Thread Producer [i=1 to M] {
-while (true) {
-...
-/* produz dados e armazena no buffer */
-P(empty);
-P(mutexD);
-buf[rear] = data; rear = (rear + 1) % n;
-V(mutextD);
-V(full);
-}
-}

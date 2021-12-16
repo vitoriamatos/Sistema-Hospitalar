@@ -59,6 +59,16 @@ class PatientController extends Action
         $patient->__set('id', $_SESSION['id']);
         $this->view->info_user = $patient->getPatient();
 
+        $plains = Container::getModel('Plains');
+       
+		$plains->__set('id', $patient->getPatient()['id_plan']);
+		$this->view->plains = $plains->getPlain();
+
+		$this->view->id_plains = $plains->getIdPlain();
+
+		$description = $plains->getInfoPlain();
+		
+		$this->view->descriptions = $description;
        
         $this->render('info-patient');
 

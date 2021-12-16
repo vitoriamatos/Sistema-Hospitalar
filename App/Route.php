@@ -49,11 +49,16 @@ class Route extends Bootstrap {
 		
 		
 		/*=.=.=.=.=.=.=.=ADMINS=.=.=.=.=.=.=.*/
-		
 		$routes['dashboard-admin'] = array(
 			'route' => '/dashboard-admin',
 			'controller' => 'AdmController',
 			'action' => 'index'
+		);
+
+		$routes['config-admin'] = array(
+			'route' => '/config-admin',
+			'controller' => 'AdmController',
+			'action' => 'config'
 		);
 
 		//patients
