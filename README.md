@@ -67,7 +67,7 @@ não é necessário que seja clonado no htdocs do xampp, pois iremos posteriorme
       $ cd public
       
       # Coloque o comando para iniciar o servidor configurando na porta 8080
-      - php -S localhost:8080
+      $ php -S localhost:8080
       
       # O servidor inciará na porta:8080- acesse http://localhost:8080
 
