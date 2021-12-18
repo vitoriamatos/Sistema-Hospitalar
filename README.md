@@ -24,8 +24,8 @@ entendam as necessidades e problemas de ambos.
    * [Pré Requisitos](#pré-requisitos)
    * [Versões](#versões)
    * [Instalação](#instalação)
-   * [Padrão de projeto](#testes)
-   * [Como usar cada módulo](#como-usar)
+   * [Padrão de projeto](#padrão-de-projeto)
+   * [Como usar cada módulo](#padrão-de-projeto)
       * [Administradores](#pre-requisitos)
       * [Médicos](#medicoss)
       * [Pacientes](#pacientes)
@@ -33,6 +33,7 @@ entendam as necessidades e problemas de ambos.
       * [Healht+](#health+)
     
    * [Tecnologias](#tecnologias)
+   * [Autor](#autor)
 <!--te-->
 
 ## Pré Requisitos
