@@ -6,7 +6,7 @@
 <h1 align="center">
   <img alt="NextLevelWeek" title="#NextLevelWeek" width: "50" src="./assets/index.png" />
 </h1>
-Projeto de um site de gerenciamento de uma rede de hospitais. Possui 3 módulos: Administradores, Médicos e Pacientes, além de um sistema de ecommerce. 
+Projeto pessoal de um site de gerenciamento de uma rede de hospitais. Possui 3 módulos: Administradores, Médicos e Pacientes, além de um sistema de ecommerce. 
 Cada módulo possui sua respectiva regra de négocio e sistemas baseados na necessidade de cada usuário. Possui também um pequeno sistema de rede social chamado Health+,
 cujo objetivo principal é conectar os médicos presentes na rede hosptialar com os pacientes, e aproximar mais os administradores de ambos usuários afim de que eles
 entendam as necessidades e problemas de ambos. 
