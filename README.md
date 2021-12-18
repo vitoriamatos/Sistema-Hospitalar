@@ -1,6 +1,7 @@
 # Hospital System
 
 ## Sobre o projeto
+[![Badge](https://img.shields.io/static/v1?label=LICENSA&message=MIT&color=blueviolet&link=https://github.com/vitoriamatos/Hospital-System/blob/master/LICENSE)](https://github.com/vitoriamatos/Hospital-System/blob/master/LICENSE)
 
 <h1 align="center">
   <img alt="NextLevelWeek" title="#NextLevelWeek" width: "50" src="./assets/index.png" />
@@ -12,7 +13,6 @@ entendam as necessidades e problemas de ambos.
 
 
 
-[![Badge](https://img.shields.io/static/v1?label=LICENSA&message=MIT&color=blueviolet&link=https://github.com/vitoriamatos/Hospital-System/blob/master/LICENSE)](https://github.com/vitoriamatos/Hospital-System/blob/master/LICENSE)
 
 <h4 align="center"> 
 	🚧  Status do projeto: 🛠 Em desenvolvimento...  🚧
