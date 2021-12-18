@@ -61,7 +61,7 @@ não é necessário que seja clonado no htdocs do xampp, pois iremos posteriorme
    Você deve abrir o diretório principal do projeto pelo terminal ir até o sub-diretório "public"  para configurar a porta, seguindo os seguintes comandos
 
       # Clone este repositório
-      $ git clone https://github.com/vitoriamatos/Hospital-System.git
+      $ git clone https://github.com/vitoriamatos/Sistema-Hospitalar.git
       
       # Acesse a pasta do projeto no terminal/cmd e em seguida acesse o subdiretorio public
       $ cd public
