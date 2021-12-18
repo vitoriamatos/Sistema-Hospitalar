@@ -57,7 +57,8 @@ Se você já possui todos os pré requisitos listados, pode clonar este reposit�
 não é necessário que seja clonado no htdocs do xampp, pois iremos posteriormente configurar uma porta para o servidor local.
 
  🧭 Rodando o Backend (servidor)
-    Você deve abrir o diretório principal do projeto pelo terminal ir até o sub-diretório "public"  para configurar a porta, seguindo os seguintes comandos
+ 
+   Você deve abrir o diretório principal do projeto pelo terminal ir até o sub-diretório "public"  para configurar a porta, seguindo os seguintes comandos
 
       # Clone este repositório
       $ git clone https://github.com/vitoriamatos/Hospital-System.git
