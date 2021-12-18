@@ -2,6 +2,9 @@
 
 ## Sobre o projeto
 
+<h1 align="center">
+  <img alt="NextLevelWeek" title="#NextLevelWeek" width: "50" src="./assets/index.png" />
+</h1>
 Projeto de um site de gerenciamento de uma rede de hospitais. Possui 3 módulos: Administradores, Médicos e Pacientes, além de um sistema de ecommerce. 
 Cada módulo possui sua respectiva regra de négocio e sistemas baseados na necessidade de cada usuário. Possui também um pequeno sistema de rede social chamado Health+,
 cujo objetivo principal é conectar os médicos presentes na rede hosptialar com os pacientes, e aproximar mais os administradores de ambos usuários afim de que eles
@@ -70,11 +73,11 @@ não é necessário que seja clonado no htdocs do xampp, pois iremos posteriorme
 
   🎲 Configurando o banco de dados
  
- 	* Ao clonar o projeto , verifique que na pasta principal está um arquivo chamado database.sql.
+ 	* Ao clonar o projeto , verifique que na pasta principal está um arquivo chamado hospital-system.sql
 	* Em seguida digite em seu navegador http://localhost/phpmyadmin
 	* No Dashboard lateral esquedo, clique no botão "NOVO"
 	* Defina o nome como sendo hospital-system e escolha o padão UTF8_GENERAL_CI
-	* Clique em importa banco de dados, e vá até onde está localizado o arquivo database.sql
+	* Clique em importa banco de dados, e vá até onde está localizado o arquivo hospital-system.sql
 	
 	
  ## Padrão de Projeto
