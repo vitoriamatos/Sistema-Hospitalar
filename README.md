@@ -1,4 +1,4 @@
-# Hospital System
+# Sistema Hospitalar
 
 ## Sobre o projeto
 [![Badge](https://img.shields.io/static/v1?label=LICENSA&message=MIT&color=blueviolet&link=https://github.com/vitoriamatos/Hospital-System/blob/master/LICENSE)](https://github.com/vitoriamatos/Hospital-System/blob/master/LICENSE)
