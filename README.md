@@ -97,6 +97,13 @@ Os administradores possuem a função de criar novos usuários e monitorar todo 
  
  Pode também criar novos médicos, administradores e é nesse módulo que se é iniciado a triagem de pacientes do pronto socorro. Além de poder monitorar os status do sistema de urgencia, através de paineis e gráficos que funcionam como contadores.
  
+ O projeto já vem com um usuário ADM criado, você pode acessa-lo através de:
+ 
+ 	Email: adm@email.com
+	Senha: 123
+
+A partir dele você criar outros usuários, seguindo a regra de criação de cada um. 
+ 
  - Médicos 
  
  Os médicos podem abrir o relatório de Pronto Socorro, previamente criado pelos adms e realizar o atendimento do paciente. Podem editar suas próprias informações e buscar por pacientes na urgencia.
